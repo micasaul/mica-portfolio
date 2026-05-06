@@ -1,5 +1,6 @@
 import { useTheme } from './hooks/useTheme'
 import { useLang } from './hooks/useLang'
+import { Header } from './components/Layout/Header'
 
 function App() {
   const { theme, toggleTheme } = useTheme()
@@ -7,10 +8,12 @@ function App() {
 
   return (
     <div>
-      <p>tema: {theme}</p>
-      <p>idioma: {lang}</p>
-      <button onClick={toggleTheme}>toggle tema</button>
-      <button onClick={toggleLang}>toggle idioma</button>
+      <Header
+        theme={theme}
+        toggleTheme={toggleTheme}
+        lang={lang}
+        toggleLang={toggleLang}
+      />
     </div>
   )
 }

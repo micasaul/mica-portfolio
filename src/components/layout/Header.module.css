@@ -1,0 +1,113 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 48px;
+}
+
+.folderName {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-header-text);
+  letter-spacing: 0.04em;
+}
+
+.right {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 100%;
+}
+
+.langToggle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-header-text);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--color-header-text);
+  border-radius: 20px;
+  padding: 3px 10px;
+  align-self: center;
+  transition: opacity 0.2s;
+}
+
+.langToggle:hover { opacity: 0.7; }
+
+.langActive {
+  font-weight: 600;
+}
+
+.langInactive {
+  opacity: 0.4;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 100%;
+}
+
+.tab {
+  position: relative;
+  padding: 0 27px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  border: 0.5px solid transparent;
+  border-bottom: none;
+  margin-bottom: 0;
+  background: none;
+  transition: opacity 0.2s;
+}
+
+.tab:hover { opacity: 0.8; }
+
+.tabSol { color: var(--color-primary); }
+.tabLuna { color: var(--color-beige); }
+
+.tabActive {
+  height: 40px;
+  border-color: var(--color-border);
+}
+
+.tabSol.tabActive {
+  background: var(--color-bg);
+}
+
+.tabLuna.tabActive {
+  background: var(--color-bg);
+}
+
+.tabActive::before,
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+.tabActive::before {
+  right: -8px;
+  background: radial-gradient(circle at top right, transparent 70%, var(--color-bg) 70%);
+}
+
+.tabActive::after {
+  left: -8px;
+  background: radial-gradient(circle at top left, transparent 70%, var(--color-bg) 70%);
+}
