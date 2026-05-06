@@ -1,0 +1,98 @@
+:root {
+  /* Colores base */
+  --color-primary:      #2b4641;
+  --color-secondary:    #ebdab7;
+  --color-green-soft:   #656f5e;
+  --color-dark:         #1e1e1e;
+  --color-light:        #faf5ef;
+
+  /* Modo claro (default) */
+  --color-bg:           #ebdab7;
+  --color-bg-card:      #2b4641;
+  --color-text:         #faf5ef;
+  --color-text-dark:    #1e1e1e;
+  --color-header-bg:    #656f5e;
+  --color-header-text:  #1e1e1e;
+  --color-accent:       #2b4641;
+  --color-accent-fg:    #ebdab7;
+  --color-glow:         #2b4641;
+
+  /* Botones modo claro */
+  --color-btn-bg:       #2b4641;
+  --color-btn-border:   #ebdab7;
+  --color-btn-text:     #ebdab7;
+  --color-btn-bg-active:    #ebdab7;
+  --color-btn-text-active:  #2b4641;
+
+  /* Franja habilidades modo claro */
+  --color-stripe:       #2b4641;
+  --color-stripe-text:  #ebdab7;
+  --color-stripe-border:#ebdab7;
+
+  /* Proyectos modo claro */
+  --color-proj-title:   #2b4641;
+  --color-proj-card:    #2b4641;
+  --color-proj-text:    #faf5ef;
+
+  /* Botón estrella modo claro */
+  --color-star-btn:     #2b4641;
+  --color-star-icon:    #ebdab7;
+
+  /* Brillos del fondo */
+  --color-glow-bg:      #2b4641;
+
+  /* Tipografía */
+  --font-display:       'Playfair Display', serif;
+  --font-mono:          'JetBrains Mono', monospace;
+  --font-body:          'Inter', sans-serif;
+
+  /* Espaciados */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2.5rem;
+  --space-2xl:  4rem;
+
+  /* Bordes */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+}
+
+/* Modo oscuro */
+[data-theme="dark"] {
+  --color-bg:           #2b3a3e;
+  --color-bg-card:      #656f5e;
+  --color-text:         #1e1e1e;
+  --color-text-dark:    #1e1e1e;
+  --color-header-bg:    #1e1e1e;
+  --color-header-text:  #656f5e;
+  --color-accent:       #656f5e;
+  --color-accent-fg:    #2b3a3e;
+  --color-glow:         #656f5e;
+
+  /* Botones modo oscuro */
+  --color-btn-bg:       #656f5e;
+  --color-btn-border:   #2b3a3e;
+  --color-btn-text:     #2b3a3e;
+  --color-btn-bg-active:    #2b3a3e;
+  --color-btn-text-active:  #656f5e;
+
+  /* Franja habilidades modo oscuro */
+  --color-stripe:       #656f5e;
+  --color-stripe-text:  #2b3a3e;
+  --color-stripe-border:#2b3a3e;
+
+  /* Proyectos modo oscuro */
+  --color-proj-title:   #656f5e;
+  --color-proj-card:    #656f5e;
+  --color-proj-text:    #1e1e1e;
+
+  /* Botón estrella modo oscuro */
+  --color-star-btn:     #656f5e;
+  --color-star-icon:    #2b3a3e;
+
+  /* Brillos del fondo */
+  --color-glow-bg:      #656f5e;
+}
