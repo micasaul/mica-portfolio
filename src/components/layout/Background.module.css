@@ -1,0 +1,16 @@
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  pointer-events: none;
+  overflow: hidden;
+  top: 48px;
+}
+
+.col {
+  flex: 1;
+  height: 100%;
+  color: var(--color-glow-bg);
+  opacity: 0.35;
+}
