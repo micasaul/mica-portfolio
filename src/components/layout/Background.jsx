@@ -4,14 +4,12 @@ import styles from './Background.module.css'
 export function Background() {
   return (
     <div className={styles.background}>
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
-      <Bg className={styles.col} />
+      {[...Array(8)].map((_, i) => (
+        <Bg
+          key={i}
+          className={styles.col}
+        />
+      ))}
     </div>
   )
 }

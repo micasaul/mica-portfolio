@@ -5,12 +5,15 @@
   display: flex;
   pointer-events: none;
   overflow: hidden;
+  background-color: var(--color-bg);
   top: 48px;
 }
 
 .col {
   flex: 1;
   height: 100%;
+  min-width: 0;
+  display: block;
   color: var(--color-glow-bg);
-  opacity: 0.35;
+  opacity: 0.8;
 }
