@@ -1,5 +1,8 @@
 import { useTheme } from './hooks/useTheme'
 import { useLang } from './hooks/useLang'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Intro } from './components/Intro/Intro'
 import { StarButton } from './components/Layout/StarButton'
 import { Header } from './components/Layout/Header'
 import { Background } from './components/Layout/Background'
@@ -7,14 +10,32 @@ import { Hero } from './components/sections/Hero'
 import { Skills } from './components/sections/Skills'
 import { Projects } from './components/sections/Projects'
 
+import EstrellaSvg from './assets/icons/estrella.svg?react'
+import EstrellitaSvg from './assets/icons/estrellita.svg?react'
+import BrilloSvg from './assets/icons/brillo.svg?react'
+
 function App() {
   const { theme, toggleTheme } = useTheme()
   const { lang, toggleLang } = useLang()
+  const [introDone, setIntroDone] = useState(false)
 
   return (
     <>
+      <Intro
+        onDone={() => setIntroDone(true)}
+        SvgEstrella={EstrellaSvg}
+        SvgEstrellita={EstrellitaSvg}
+        SvgBrillo={BrilloSvg}
+      />
+
       <Background />
-      <div style={{ position: 'relative', zIndex: 1, width: '100%', overflowX: 'hidden' }}>
+
+      <motion.div
+        style={{ position: 'relative', zIndex: 1, width: '100%', overflowX: 'hidden' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: introDone ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: 'easeIn' }}
+      >
         <Header
           theme={theme}
           toggleTheme={toggleTheme}
@@ -27,7 +48,7 @@ function App() {
           <Projects lang={lang} />
         </main>
         <StarButton lang={lang} />
-      </div>
+      </motion.div>
     </>
   )
 }

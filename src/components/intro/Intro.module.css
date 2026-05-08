@@ -1,0 +1,75 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.folderLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-glow-bg);
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.folder {
+  position: relative;
+  perspective: 800px;
+  width: 160px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.back {
+  width: 160px;
+  height: 110px;
+  border-radius: 8px;
+  background: var(--color-glow-bg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 2px -3px 6px rgba(0,0,0,0.2);
+}
+
+.cover {
+  width: 160px;
+  height: 110px;
+  border-radius: 4px 0 8px 8px;
+  background: color-mix(in srgb, var(--color-glow-bg) 80%, white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  transform-origin: 50% 100%;
+  transform: rotateX(0deg);
+  transition: transform 0.4s ease;
+  box-shadow: inset 2px -3px 6px rgba(0,0,0,0.15);
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 16px;
+  border-radius: 8px 8px 0 0;
+  background: color-mix(in srgb, var(--color-glow-bg) 80%, white);
+  top: -14px;
+  left: 0;
+}
+
+.folder:hover .cover,
+.folder.open .cover {
+  transform: rotateX(-35deg);
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1001;
+}
