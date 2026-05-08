@@ -3,6 +3,7 @@ import { useLang } from './hooks/useLang'
 import { Header } from './components/Layout/Header'
 import { Background } from './components/Layout/Background'
 import { Hero } from './components/sections/Hero'
+import { Skills } from './components/sections/Skills'
 
 function App() {
   const { theme, toggleTheme } = useTheme()
@@ -20,6 +21,7 @@ function App() {
         />
         <main>
           <Hero lang={lang} />
+          <Skills lang={lang} />
         </main>
       </div>
     </>
