@@ -61,6 +61,8 @@
   color: var(--color-bg);
   transition: transform 0.2s;
   flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3), 
+              0 4px 6px rgba(0,0,0,0.2);
 }
 
 .starBtn:hover {

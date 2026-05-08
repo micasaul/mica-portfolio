@@ -134,7 +134,7 @@ export function Projects({ lang }) {
 
           <div className={styles.infoSide}>
             <p className={styles.stackLabel}>Stack</p>
-            {['React', 'Node.js · Strapi', 'PostgreSQL', 'Figma'].map(s => (
+            {['React', 'Node.js', 'Strapi', 'PostgreSQL', 'Figma'].map(s => (
               <div key={s} className={styles.stackItem}>
                 <div className={styles.sdot} />
                 {s}
