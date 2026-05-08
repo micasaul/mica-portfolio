@@ -1,16 +1,24 @@
-# React + Vite
+# Micaela Saül — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal desarrollado para presentar proyectos, habilidades y tecnologías relacionadas al desarrollo web. El sitio fue diseñado con foco en frontend, experiencia de usuario y una interfaz clara, moderna y responsive, combinando diseño visual y desarrollo de una forma equilibrada.
 
-Currently, two official plugins are available:
+## 🛠️ Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- JavaScript
+- Node.js
+- HTML5
+- CSS3
+- Figma
+- GitHub
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Tema claro/oscuro
+- Idioma español/inglés
+- Introducción animada
+- Ilustraciones vectoriales hechas a mano
+- Bento grid para skills y tecnologías
+- Comparador interactivo entre wireframes y resultado final
+- Cards de proyectos con stack, descripción y detalles
+- Diseño responsive e interactivo
