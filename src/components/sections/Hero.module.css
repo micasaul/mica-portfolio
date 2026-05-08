@@ -1,0 +1,94 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6rem;
+  padding-top: 48px;
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  width: 900px;
+  height: auto;
+  color: var(--color-glow-bg);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 800px;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1;
+  margin: 0.25rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bio {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-soft);
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-glow-bg);
+  border: 1.5px solid var(--color-bg);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--color-bg);
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--color-bg);
+  color: var(--color-glow-bg);
+}
