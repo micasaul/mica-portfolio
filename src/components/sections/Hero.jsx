@@ -35,8 +35,8 @@ export function Hero({ lang }) {
         <div className={styles.links}>
           <a className={styles.btnPrimary} href="/cv-es.pdf" target="_blank">{t.cvEs}</a>
           <a className={styles.btnPrimary} href="/cv-en.pdf" target="_blank">{t.cvEn}</a>
-          <a className={styles.btnPrimary} href="https://github.com/" target="_blank">GitHub</a>
-          <a className={styles.btnPrimary} href="https://linkedin.com/" target="_blank">LinkedIn</a>
+          <a className={styles.btnPrimary} href="https://github.com/micasaul" target="_blank">GitHub</a>
+          <a className={styles.btnPrimary} href="https://linkedin.com/in/micaela-saül-8b4b8622b" target="_blank">LinkedIn</a>
         </div>
       </div>
     </section>
