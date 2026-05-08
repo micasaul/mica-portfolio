@@ -1,5 +1,6 @@
 import { useTheme } from './hooks/useTheme'
 import { useLang } from './hooks/useLang'
+import { StarButton } from './components/Layout/StarButton'
 import { Header } from './components/Layout/Header'
 import { Background } from './components/Layout/Background'
 import { Hero } from './components/sections/Hero'
@@ -25,6 +26,7 @@ function App() {
           <Skills lang={lang} />
           <Projects lang={lang} />
         </main>
+        <StarButton lang={lang} />
       </div>
     </>
   )

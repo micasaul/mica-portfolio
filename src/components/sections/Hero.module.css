@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  width: 100%;
+  width: 90%;
   max-width: 850px;
   margin-top: 30px;
 }
@@ -100,7 +100,45 @@
   color: var(--color-glow-bg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 690px) {
+  .blob{
+    width: 115%;
+  }
+
+  .section {
+    padding: 0 1.5rem;
+    padding-top: 48px;
+  }
+
+  .content {
+    gap: 0;
+  }
+
+  .name {
+    margin: 0;
+    font-size: 42px;
+  }
+
+  .subtitle {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 11px;
+  }
+
+  .bio {
+    font-size: 13px;
+  }
+
+  .links {
+    margin-top: 0.5rem;
+  }
+
+  .btnPrimary{
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 535px) {
   .blob {
     transform: rotate(90deg);
     width: 165%;
@@ -108,7 +146,7 @@
   }
 
   .content {
-    max-width: 80%;
+    max-width: 77%;
     margin-top: 10px;
   }
 
