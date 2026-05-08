@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Background />
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 1, width: '100%', overflowX: 'hidden' }}>
         <Header
           theme={theme}
           toggleTheme={toggleTheme}

@@ -130,24 +130,6 @@ export function Projects({ lang }) {
             <p className={styles.projType}>{t.type}</p>
             <h2 className={styles.projName}>Camisería Urbana</h2>
             <p className={styles.projDesc}>{t.desc}</p>
-
-            <div className={styles.actions}>
-              <button className={styles.expandBtn} onClick={() => setOpen(!open)}>
-                {open ? t.less : t.more}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                  style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </button>
-              <a
-                className={styles.projLink}
-                href="https://github.com/micasaul/camiseria-urbana"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t.github}
-              </a>
-            </div>
           </div>
 
           <div className={styles.infoSide}>
@@ -158,6 +140,24 @@ export function Projects({ lang }) {
                 {s}
               </div>
             ))}
+          </div>
+
+          <div className={styles.actions}>
+            <button className={styles.expandBtn} onClick={() => setOpen(!open)}>
+              {open ? t.less : t.more}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <a
+              className={styles.projLink}
+              href="https://github.com/micasaul/camiseria-urbana"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.github}
+            </a>
           </div>
         </div>
 
