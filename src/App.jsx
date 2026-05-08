@@ -4,6 +4,7 @@ import { Header } from './components/Layout/Header'
 import { Background } from './components/Layout/Background'
 import { Hero } from './components/sections/Hero'
 import { Skills } from './components/sections/Skills'
+import { Projects } from './components/sections/Projects'
 
 function App() {
   const { theme, toggleTheme } = useTheme()
@@ -22,6 +23,7 @@ function App() {
         <main>
           <Hero lang={lang} />
           <Skills lang={lang} />
+          <Projects lang={lang} />
         </main>
       </div>
     </>
