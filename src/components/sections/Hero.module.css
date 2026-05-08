@@ -43,8 +43,10 @@
 
 .name {
   font-size: clamp(32px, 7vw, 85px);
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
+  font-variation-settings:
+    "YEAR" 2004;
   color: var(--color-text);
   line-height: 1;
   margin: 0.25rem 0;
@@ -82,12 +84,12 @@
   align-items: center;
   gap: 6px;
   background: var(--color-glow-bg);
-  border: 1.5px solid var(--color-bg);
+  border: 2px solid var(--color-bg);
   border-radius: 20px;
   padding: 8px 20px;
   font-size: 12px;
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-bg);
   cursor: pointer;
   text-decoration: none;
