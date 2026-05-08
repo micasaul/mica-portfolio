@@ -1,0 +1,5 @@
+<svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <g class="folder-closed">
+    <path d="M4 14C4 11.8 5.8 10 8 10H30L36 16H72C74.2 16 76 17.8 76 20V52C76 54.2 74.2 56 72 56H8C5.8 56 4 54.2 4 52V14Z" fill="currentColor" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+</svg>
