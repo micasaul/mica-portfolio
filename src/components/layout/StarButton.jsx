@@ -7,13 +7,13 @@ const links = {
     { label: 'CV — español', href: '/cv-es.pdf' },
     { label: 'CV — english', href: '/cv-en.pdf' },
     { label: 'GitHub', href: 'https://github.com/micasaul' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/micaela-saül-8b4b8622b' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/micaela-saul-8b4b8622b' },
   ],
   en: [
     { label: 'CV — español', href: '/cv-es.pdf' },
     { label: 'CV — english', href: '/cv-en.pdf' },
     { label: 'GitHub', href: 'https://github.com/micasaul' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/micaela-saül-8b4b8622b' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/micaela-saul-8b4b8622b' },
   ],
 }
 
