@@ -1,5 +1,5 @@
 .section {
-  padding: 4rem 0;
+  padding: 8rem 0;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -26,11 +26,14 @@
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
+  width: min(100%, 1000px);
+  margin: 0 auto;
 }
 
 .cell {
+  min-width: 0;
   background: rgba(255, 255, 255, 0.06);
   border: 0.5px solid var(--color-stripe-border);
   border-radius: var(--radius-md);
@@ -41,7 +44,16 @@
 }
 
 .cell.wide {
+  grid-column: span 4;
+}
+
+.cell:nth-child(1) {
   grid-column: span 2;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(4) {
+  grid-column: span 3;
 }
 
 .cellTitle {
@@ -66,20 +78,57 @@
   gap: 8px 20px;
 }
 
+.columns2,
+.columns3,
+.columns4 {
+  display: grid;
+}
+
+.columns2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
+.columns3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
+.columns4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
 .skill {
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .skillName {
+  overflow-wrap: anywhere;
   font-size: 14px;
   color: var(--color-stripe-text);
   font-family: var(--font-body);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .cell,
+  .cell.wide,
+  .cell:nth-child(1),
+  .cell:nth-child(3),
+  .cell:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .columns2,
+  .columns3,
+  .columns4 {
     grid-template-columns: 1fr;
   }
 }

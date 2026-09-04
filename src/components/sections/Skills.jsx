@@ -2,32 +2,39 @@ import styles from './Skills.module.css'
 
 const groups = [
   {
-    title: { es: 'Lenguajes', en: 'Languages' },
+    title: { es: 'Frontend', en: 'Frontend' },
     wide: false,
+    columns: 2,
     skills: [
-      { name: 'JavaScript', icon: 'devicon-javascript-plain' },
-      { name: 'Python', icon: 'devicon-python-plain' },
       { name: 'HTML', icon: 'devicon-html5-plain' },
       { name: 'CSS', icon: 'devicon-css3-plain' },
-    ],
-  },
-  {
-    title: { es: 'Frontend & Diseño', en: 'Frontend & Design' },
-    wide: false,
-    skills: [
+      { name: 'JavaScript', icon: 'devicon-javascript-plain' },
       { name: 'React', icon: 'devicon-react-original' },
-      { name: 'Figma', icon: 'devicon-figma-plain' },
-      { name: 'Balsamiq'},
-      { name: 'Canva', icon: 'devicon-canva-plain' },
     ],
   },
   {
-    title: { es: 'Backend & Bases de datos', en: 'Backend & Databases' },
-    wide: false,
+    title: { es: 'Diseño/UX', en: 'Design/UX' },
+    wide: true,
+    columns: 4,
+    skills: [
+      { name: 'Figma', icon: 'devicon-figma-plain' },
+      { name: 'Canva', icon: 'devicon-canva-plain' },
+      { name: 'Balsamiq', icon: 'devicon-sketch-plain' },
+      { name: 'Affinity', icon: 'devicon-gimp-plain' },
+      { name: 'Adobe Illustrator', icon: 'devicon-illustrator-plain' },
+      { name: 'Adobe Photoshop', icon: 'devicon-photoshop-plain' },
+      { name: 'Adobe InDesign', icon: 'devicon-indesign-plain' },
+    ],
+  },
+  {
+    title: { es: 'Backend y bases de datos', en: 'Backend & Databases' },
+    wide: true,
+    columns: 3,
     skills: [
       { name: 'Node.js', icon: 'devicon-nodejs-plain' },
       { name: 'NestJS', icon: 'devicon-nestjs-plain' },
-      { name: 'Strapi' },
+      { name: 'Python', icon: 'devicon-python-plain' },
+      { name: 'Strapi', icon: 'devicon-strapi-plain' },
       { name: 'PostgreSQL', icon: 'devicon-postgresql-plain' },
       { name: 'MongoDB', icon: 'devicon-mongodb-plain' },
     ],
@@ -35,12 +42,14 @@ const groups = [
   {
     title: { es: 'Herramientas', en: 'Tools' },
     wide: false,
+    columns: 3,
     skills: [
       { name: 'Git', icon: 'devicon-git-plain' },
       { name: 'GitHub', icon: 'devicon-github-original' },
       { name: 'GitLab', icon: 'devicon-gitlab-plain' },
       { name: 'Docker', icon: 'devicon-docker-plain' },
       { name: 'Postman', icon: 'devicon-postman-plain' },
+      { name: 'Kanban', icon: 'devicon-trello-plain' },
     ],
   },
 ]
@@ -59,13 +68,19 @@ export function Skills({ lang }) {
               className={`${styles.cell} ${group.wide ? styles.wide : ''}`}
             >
               <span className={styles.cellTitle}>{group.title[lang]}</span>
-              <div className={group.wide ? styles.skillListRow : styles.skillList}>
+              <div
+                className={`${group.wide ? styles.skillListRow : styles.skillList} ${
+                  styles[`columns${group.columns}`]
+                }`}
+              >
                 {group.skills.map((skill) => (
                   <div key={skill.name} className={styles.skill}>
-                    <i
-                      className={skill.icon}
-                      style={{ fontSize: 16, color: 'var(--color-stripe-text)' }}
-                    />
+                    {skill.icon && (
+                      <i
+                        className={skill.icon}
+                        style={{ fontSize: 16, color: 'var(--color-stripe-text)' }}
+                      />
+                    )}
                     <span className={styles.skillName}>{skill.name}</span>
                   </div>
                 ))}
