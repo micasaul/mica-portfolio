@@ -9,6 +9,7 @@ import { Background } from './components/layout/Background'
 import { Hero } from './components/sections/Hero'
 import { Skills } from './components/sections/Skills'
 import { Projects } from './components/sections/Projects'
+import { Education } from './components/sections/Education'
 
 import EstrellaSvg from './assets/icons/estrella.svg?react'
 import EstrellitaSvg from './assets/icons/estrellita.svg?react'
@@ -44,8 +45,9 @@ function App() {
         />
         <main>
           <Hero lang={lang} />
-          <Skills lang={lang} />
           <Projects lang={lang} />
+          <Skills lang={lang} />
+          <Education lang={lang} />
         </main>
         <StarButton lang={lang} />
       </motion.div>
