@@ -4,41 +4,113 @@ import styles from './Projects.module.css'
 const content = {
   es: {
     title: 'proyectos',
-    type: 'E-commerce Full Stack',
-    desc: 'Aplicación web desarrollada de punta a punta — desde el diseño en Figma hasta la implementación. Incluye carrito, pagos, autenticación y gestión de productos.',
     more: 'ver más',
     less: 'ver menos',
     hint: 'arrastrá para comparar',
     before: '← wireframe',
     after: 'resultado final →',
-    details: [
-      'Frontend en React con rutas, carrito y estado global',
-      'Backend con Strapi como CMS headless y API REST',
-      'Base de datos relacional en PostgreSQL',
-      'Integración de pagos y autenticación de usuarios',
-      'Diseño completo en Figma — wireframes, mockups y prototipo',
-    ],
     github: 'GitHub',
   },
   en: {
     title: 'projects',
-    type: 'Full Stack E-commerce',
-    desc: 'Web application built end to end — from Figma design to implementation. Includes cart, payments, authentication and product management.',
     more: 'see more',
     less: 'see less',
     hint: 'drag to compare',
     before: '← wireframe',
     after: 'final result →',
-    details: [
-      'Frontend in React with routing, cart and global state',
-      'Backend with Strapi as headless CMS and REST API',
-      'Relational database in PostgreSQL',
-      'Payment integration and user authentication',
-      'Full design in Figma — wireframes, mockups and prototype',
-    ],
     github: 'GitHub',
   },
 }
+
+const projects = [
+  {
+    name: 'Camisería Urbana',
+    visual: 'camiseria',
+    hasPreview: true,
+    type: { es: 'E-commerce Full Stack', en: 'Full Stack E-commerce' },
+    date: { es: 'Ago. 2025 – Feb. 2026', en: 'Aug. 2025 – Feb. 2026' },
+    desc: {
+      es: 'Aplicación web desarrollada de punta a punta — desde el diseño en Figma hasta la implementación. Incluye carrito, pagos, autenticación y gestión de productos.',
+      en: 'Web application built end to end — from Figma design to implementation. Includes cart, payments, authentication and product management.',
+    },
+    stack: ['React', 'Node.js', 'Strapi', 'PostgreSQL', 'Figma'],
+    details: {
+      es: [
+        'Frontend en React con rutas, carrito y estado global',
+        'Backend con Strapi como CMS headless y API REST',
+        'Base de datos relacional en PostgreSQL',
+        'Integración de pagos y autenticación de usuarios',
+        'Diseño completo en Figma — wireframes, mockups y prototipo',
+      ],
+      en: [
+        'Frontend in React with routing, cart and global state',
+        'Backend with Strapi as headless CMS and REST API',
+        'Relational database in PostgreSQL',
+        'Payment integration and user authentication',
+        'Full design in Figma — wireframes, mockups and prototype',
+      ],
+    },
+    githubUrl: 'https://github.com/micasaul/camiseria-urbana',
+  },
+  {
+    name: 'DAV',
+    visual: 'dav',
+    hasPreview: true,
+    type: { es: 'Diseño Asistido por Voz para FreeCAD', en: 'Voice-Assisted Design for FreeCAD' },
+    date: { es: 'Abr. 2026 – Actualidad', en: 'Apr. 2026 – Present' },
+    desc: {
+      es: 'Interfaz de control por voz para FreeCAD orientada a personas con movilidad reducida, con herramientas para registrar y consultar las acciones realizadas.',
+      en: 'Voice-control interface for FreeCAD designed for people with reduced mobility, with tools to record and review user actions.',
+    },
+    stack: ['Python', 'FreeCAD', 'VOSK', 'Git', 'GitHub'],
+    details: {
+      es: [
+        'Desarrollo y mejora de una interfaz de control por voz para FreeCAD',
+        'Diseño de interfaz y sistema de historial para visualizar acciones',
+        'Análisis de errores y conversión de requerimientos en tickets',
+        'Coordinación del equipo de diseño y seguimiento de entregables',
+        'Relevamiento de funcionalidades y planificación de mejoras',
+      ],
+      en: [
+        'Development and improvement of a voice-control interface for FreeCAD',
+        'Interface and history system design to visualize user actions',
+        'Bug analysis and conversion of requirements into implementation tickets',
+        'Design team coordination and deliverable tracking',
+        'Feature discovery and planning of system improvements',
+      ],
+    },
+    githubUrl: 'https://github.com/DAv-Project-Team-UADER/DAV',
+  },
+  {
+    name: 'RawDoc Pipeline',
+    visual: 'rawdoc',
+    hasPreview: false,
+    type: { es: 'Pipeline Inteligente para Análisis Estructural de Documentos Normativos', en: 'Intelligent Pipeline for Structural Analysis of Regulatory Documents' },
+    date: { es: 'Abr. 2026 – Actualidad', en: 'Apr. 2026 – Present' },
+    desc: {
+      es: 'Proyecto de investigación para digitalizar y analizar documentos normativos históricos mediante OCR y detección de estructuras documentales.',
+      en: 'Research project to digitize and analyze historical regulatory documents using OCR and document-structure detection.',
+    },
+    stack: ['Python', 'YOLO', 'OCR', 'Git', 'GitHub'],
+    details: {
+      es: [
+        'Relevamiento de documentos de la Facultad de Ciencia y Tecnología de UADER',
+        'Evaluación y prueba de modelos YOLO para identificar estructuras',
+        'Análisis de resultados y validación del código desarrollado',
+        'Administración y organización del repositorio del proyecto',
+        'Coordinación del versionado e integración del trabajo del equipo',
+      ],
+      en: [
+        'Survey of documents from UADER Faculty of Science and Technology',
+        'Evaluation and testing of YOLO models to identify document structures',
+        'Results analysis and validation of the developed code',
+        'Project repository administration and organization',
+        'Versioning coordination and team-work integration',
+      ],
+    },
+    githubUrl: 'https://github.com/micasaul/RawDoc-Pipeline',
+  },
+]
 
 function Comparator({ hint }) {
   const [pos, setPos] = useState(50)
@@ -74,25 +146,17 @@ function Comparator({ hint }) {
 
   return (
     <>
-      <div
-        className={styles.comparator}
-        ref={compRef}
-        onMouseDown={onMouseDown}
-        onTouchMove={onTouchMove}
-      >
+      <div className={styles.comparator} ref={compRef} onMouseDown={onMouseDown} onTouchMove={onTouchMove}>
         <div className={styles.compAfter}>
           <img src="/result-camiseria.png" alt="Resultado final" />
         </div>
-        <div
-          className={styles.compBefore}
-          style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-        >
+        <div className={styles.compBefore} style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <img src="/wireframe-camiseria.png" alt="Wireframe" />
         </div>
         <div className={styles.compHandle} style={{ left: `${pos}%` }}>
           <div className={styles.compCircle}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-              <polyline points="15 18 9 12 15 6"/>
+              <polyline points="15 18 9 12 15 6" />
             </svg>
           </div>
         </div>
@@ -102,88 +166,127 @@ function Comparator({ hint }) {
   )
 }
 
-export function Projects({ lang }) {
-  const [open, setOpen] = useState(false)
-  const t = content[lang]
+function ProjectVisual({ project }) {
+    if (project.visual === 'camiseria') {
+      return <img src="/result-camiseria.png" alt={project.name} />
+    }
 
-  return (
-    <section className={styles.section}>
-      <p className={styles.sectionTitle}>{t.title}</p>
+    if (project.visual === 'dav') {
+      return <img src="/result-dav.png" alt={project.name} />
+    }
+
+    return (
+      <div className={`${styles.projectVisual} ${styles[project.visual]}`}>
+        <span className={styles.visualKicker}>{project.visual === 'dav' ? 'FREECAD / VOICE' : 'OCR / STRUCTURE'}</span>
+        <strong>{project.name}</strong>
+        <span className={styles.visualLine} />
+        <span className={styles.visualCaption}>{project.visual === 'dav' ? 'command history' : 'document pipeline'}</span>
+      </div>
+    )
+  }
+
+  function ProjectCard({ project, lang, labels }) {
+    const [open, setOpen] = useState(false)
+    const hasComparator = project.visual === 'camiseria'
+    const hasReference = project.visual === 'dav'
+    const hasPreview = project.hasPreview ?? true
+
+    return (
       <div className={styles.card}>
-
-        <div className={styles.cardTop}>
-          <div className={styles.browser}>
-            <div className={styles.browserBar}>
-              <div className={styles.dot} />
-              <div className={styles.dot} />
-              <div className={styles.dot} />
-              <div className={styles.browserUrl} />
-            </div>
-            <div className={styles.browserBody}>
-              <img src="/result-camiseria.png" alt="Camisería Urbana" />
+        {hasPreview && (
+          <div className={styles.cardTop}>
+            <div className={styles.browser}>
+              <div className={styles.browserBar}>
+                <div className={styles.dot} />
+                <div className={styles.dot} />
+                <div className={styles.dot} />
+                <div className={styles.browserUrl} />
+              </div>
+              <div className={styles.browserBody}>
+                <ProjectVisual project={project} />
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         <div className={styles.cardInfo}>
           <div className={styles.infoMain}>
-            <p className={styles.projType}>{t.type}</p>
-            <h2 className={styles.projName}>Camisería Urbana</h2>
-            <p className={styles.projDesc}>{t.desc}</p>
+            <p className={styles.projType}>{project.type[lang]}</p>
+            <h2 className={styles.projName}>{project.name}</h2>
+            {project.date && <p className={styles.projDate}>{project.date[lang]}</p>}
+            <p className={styles.projDesc}>{project.desc[lang]}</p>
           </div>
 
           <div className={styles.infoSide}>
             <p className={styles.stackLabel}>Stack</p>
-            {['React', 'Node.js', 'Strapi', 'PostgreSQL', 'Figma'].map(s => (
-              <div key={s} className={styles.stackItem}>
+            {project.stack.map(stackItem => (
+              <div key={stackItem} className={styles.stackItem}>
                 <div className={styles.sdot} />
-                {s}
+                {stackItem}
               </div>
             ))}
           </div>
 
           <div className={styles.actions}>
             <button className={styles.expandBtn} onClick={() => setOpen(!open)}>
-              {open ? t.less : t.more}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
-                <polyline points="6 9 12 15 18 9"/>
+              {open ? labels.less : labels.more}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
+                <polyline points="6 9 12 15 18 9" />
               </svg>
             </button>
-            <a
-              className={styles.projLink}
-              href="https://github.com/micasaul/camiseria-urbana"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.github}
-            </a>
+            <a className={styles.projLink} href={project.githubUrl} target="_blank" rel="noreferrer">{labels.github}</a>
           </div>
         </div>
 
         <div className={`${styles.expandable} ${open ? styles.open : ''}`}>
           <div className={styles.expandInner}>
-
-            <div className={styles.compareCol}>
-              <div className={styles.compareLabelRow}>
-                <span className={styles.clabel}>{t.before}</span>
-                <span className={styles.clabel}>{t.after}</span>
+            {hasComparator && (
+              <div className={styles.compareCol}>
+                <div className={styles.compareLabelRow}>
+                  <span className={styles.clabel}>{labels.before}</span>
+                  <span className={styles.clabel}>{labels.after}</span>
+                </div>
+                <Comparator hint={labels.hint} />
               </div>
-              <Comparator hint={t.hint} />
-            </div>
-
-            <div className={styles.detailList}>
-              {t.details.map((d, i) => (
-                <div key={i} className={styles.detailItem}>
+            )}
+            {hasReference && (
+              <div className={styles.referenceCol}>
+                <img
+                  className={styles.referenceImage}
+                  src="/figma-dav.png"
+                  alt="DAV visual exploration"
+                />
+                <p className={styles.referenceHint}>
+                  {lang === 'es'
+                    ? 'EXPLORACIÓN VISUAL — Referencias de FreeCAD y propuestas de interfaz utilizadas para definir la identidad visual de DAV.'
+                    : 'VISUAL EXPLORATION — FreeCAD references and interface proposals used to define DAV visual identity.'}
+                </p>
+              </div>
+            )}
+            <div className={`${styles.detailList} ${!hasComparator && !hasReference ? styles.detailListFull : ''}`}>
+              {project.details[lang].map((detail, index) => (
+                <div key={index} className={styles.detailItem}>
                   <span className={styles.dicon}>→</span>
-                  {d}
+                  {detail}
                 </div>
               ))}
             </div>
           </div>
-
         </div>
-      
+      </div>
+    )
+  }
+
+export function Projects({ lang }) {
+  const labels = content[lang]
+
+  return (
+    <section className={styles.section}>
+      <p className={styles.sectionTitle}>{labels.title}</p>
+      <div className={styles.projectList}>
+        {projects.map(project => (
+          <ProjectCard key={project.name} project={project} lang={lang} labels={labels} />
+        ))}
       </div>
     </section>
   )
