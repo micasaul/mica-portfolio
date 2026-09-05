@@ -303,7 +303,7 @@ export function Projects({ lang }) {
   const labels = content[lang]
 
   return (
-    <section className={styles.section}>
+    <section id="projects" className={styles.section}>
       <p className={styles.sectionTitle}>{labels.title}</p>
       <div className={styles.projectList}>
         {projects.map(project => (

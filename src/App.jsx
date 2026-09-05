@@ -38,8 +38,6 @@ function App() {
         transition={{ duration: 0.8, ease: 'easeIn' }}
       >
         <Header
-          theme={theme}
-          toggleTheme={toggleTheme}
           lang={lang}
           toggleLang={toggleLang}
         />

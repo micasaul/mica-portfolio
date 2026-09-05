@@ -5,14 +5,14 @@ const content = {
   es: {
     greeting: 'hola, soy',
     subtitle: 'Desarrolladora Web · Frontend & UX/UI · Entre Ríos, AR',
-    bio: 'Estudiante de Sistemas orientada al desarrollo web, con especial interés en frontend y UX/UI. Me gusta construir proyectos completos, desde la idea y el diseño hasta la implementación. Creo que los detalles importan: una interfaz clara, una buena experiencia y decisiones de diseño con intención no solo hacen que un proyecto se vea mejor, también hacen que funcione mejor.',
+    bio: 'Analista de Sistemas orientada al desarrollo web, con especial interés en frontend y UX/UI. Me gusta construir proyectos completos, desde la idea y el diseño hasta la implementación. Creo que los detalles importan: una interfaz clara, una buena experiencia y decisiones de diseño con intención no solo hacen que un proyecto se vea mejor, también hacen que funcione mejor.',
     cvEs: 'CV — español',
     cvEn: 'CV — english',
   },
   en: {
     greeting: "hi, i'm",
     subtitle: 'Web Developer · Frontend & UX/UI · Entre Ríos, AR',
-    bio: "Systems student focused on web development, with a particular interest in frontend and UX/UI. I enjoy building complete projects — from the idea and design all the way through implementation. I believe details matter: a clear interface, a good experience, and intentional design decisions don't just make a project look better — they make it work better.",
+    bio: "Systems Analyst focused on web development, with a particular interest in frontend and UX/UI. I enjoy building complete projects — from the idea and design all the way through implementation. I believe details matter: a clear interface, a good experience, and intentional design decisions don't just make a project look better — they make it work better.",
     cvEs: 'CV — español',
     cvEn: 'CV — english',
   },
@@ -22,7 +22,7 @@ export function Hero({ lang }) {
   const t = content[lang]
 
   return (
-    <section className={styles.section}>
+    <section id="hero" className={styles.section}>
       <Presentacion className={styles.blob} />
       <div className={styles.content}>
         <span className={styles.greeting}>{t.greeting}</span>

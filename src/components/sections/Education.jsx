@@ -22,6 +22,15 @@ const education = [
     },
   },
   {
+    type: { es: 'Certificado de idioma', en: 'Language certification' },
+    name: { es: 'Inglés', en: 'English' },
+    date: { es: 'Cambridge English · C1 Advanced', en: 'Cambridge English · C1 Advanced' },
+    desc: {
+      es: 'Certificación de inglés nivel C1 con puntaje 188.',
+      en: 'English certification at C1 level with a score of 188.',
+    },
+  },
+  {
     type: { es: 'Curso', en: 'Course' },
     name: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
     date: { es: 'UNLP · En curso', en: 'UNLP · In progress' },
@@ -39,22 +48,13 @@ const education = [
       en: 'Complementary training focused on visual composition, identity and graphic production.',
     },
   },
-  {
-    type: { es: 'Certificado de idioma', en: 'Language certification' },
-    name: { es: 'Inglés', en: 'English' },
-    date: { es: 'Cambridge English · C1 Advanced', en: 'Cambridge English · C1 Advanced' },
-    desc: {
-      es: 'Certificación de inglés nivel C1 con puntaje 188.',
-      en: 'English certification at C1 level with a score of 188.',
-    },
-  },
 ]
 
 export function Education({ lang }) {
   const labels = content[lang]
 
   return (
-    <section className={styles.section}>
+    <section id="education" className={styles.section}>
       <p className={styles.sectionTitle}>{labels.title}</p>
 
       <div className={styles.educationList}>

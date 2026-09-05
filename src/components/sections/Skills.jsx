@@ -56,7 +56,7 @@ const groups = [
 
 export function Skills({ lang }) {
   return (
-    <section className={styles.section}>
+    <section id="skills" className={styles.section}>
       <div className={styles.stripe}>
         <p className={styles.stripeTitle}>
           {lang === 'es' ? 'habilidades' : 'skills'}

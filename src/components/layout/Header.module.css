@@ -57,39 +57,44 @@
   height: 100%;
 }
 
+.tabWrap {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
 .tab {
   position: relative;
-  padding: 0 27px;
-  height: 38px;
+  min-width: 104px;
+  padding: 0 14px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-tab-inactive-text);
   cursor: pointer;
   border-radius: 8px 8px 0 0;
-  border: 0.5px solid transparent;
+  border: 1px solid transparent;
   border-bottom: none;
   margin-bottom: 0;
-  background: none;
-  transition: opacity 0.2s;
+  background: var(--color-tab-inactive-bg);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
-.tab:hover { opacity: 0.8; }
-
-.tabSol { color: var(--color-primary); }
-.tabLuna { color: var(--color-beige); }
+.tab:not(.tabActive):hover {
+  background: var(--color-tab-hover-bg);
+}
 
 .tabActive {
-  height: 40px;
-  border-color: var(--color-border);
-}
-
-.tabSol.tabActive {
-  background: var(--color-bg);
-}
-
-.tabLuna.tabActive {
-  background: var(--color-bg);
+  border-color: var(--color-tab-text);
+  background: var(--color-tab-active-bg);
+  color: var(--color-tab-active-text);
 }
 
 .tabActive::before,
@@ -110,4 +115,37 @@
 .tabActive::after {
   left: -8px;
   background: radial-gradient(circle at top left, transparent 70%, var(--color-bg) 70%);
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 0 0.75rem;
+  }
+
+  .folderName {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .tabs {
+    flex: 1;
+  }
+
+  .tabWrap {
+    flex: 1;
+  }
+
+  .tab {
+    min-width: 0;
+    width: 100%;
+    flex: 1;
+    padding: 0 6px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
 }
