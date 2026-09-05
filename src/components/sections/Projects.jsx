@@ -166,13 +166,21 @@ function Comparator({ hint }) {
   )
 }
 
-function ProjectVisual({ project }) {
+function ProjectVisual({ project, onClick }) {
     if (project.visual === 'camiseria') {
-      return <img src="/result-camiseria.png" alt={project.name} />
+      return (
+        <button type="button" className={styles.previewButton} onClick={onClick} aria-label={`Abrir vista completa de ${project.name}`}>
+          <img src="/result-camiseria.png" alt={project.name} />
+        </button>
+      )
     }
 
     if (project.visual === 'dav') {
-      return <img src="/result-dav.png" alt={project.name} />
+      return (
+        <button type="button" className={styles.previewButton} onClick={onClick} aria-label={`Abrir vista completa de ${project.name}`}>
+          <img src="/result-dav.png" alt={project.name} />
+        </button>
+      )
     }
 
     return (
@@ -187,12 +195,15 @@ function ProjectVisual({ project }) {
 
   function ProjectCard({ project, lang, labels }) {
     const [open, setOpen] = useState(false)
+    const [lightboxOpen, setLightboxOpen] = useState(false)
     const hasComparator = project.visual === 'camiseria'
     const hasReference = project.visual === 'dav'
     const hasPreview = project.hasPreview ?? true
 
+    const previewImage = project.visual === 'camiseria' ? '/result-camiseria.png' : project.visual === 'dav' ? '/result-dav.png' : null
+
     return (
-      <div className={styles.card}>
+      <div className={`${styles.card} ${!hasPreview ? styles.cardNoPreview : ''}`}>
         {hasPreview && (
           <div className={styles.cardTop}>
             <div className={styles.browser}>
@@ -203,13 +214,24 @@ function ProjectVisual({ project }) {
                 <div className={styles.browserUrl} />
               </div>
               <div className={styles.browserBody}>
-                <ProjectVisual project={project} />
+                <ProjectVisual project={project} onClick={previewImage ? () => setLightboxOpen(true) : undefined} />
               </div>
             </div>
           </div>
         )}
 
-        <div className={styles.cardInfo}>
+        {lightboxOpen && previewImage && (
+          <div className={styles.lightboxBackdrop} onClick={() => setLightboxOpen(false)}>
+            <div className={styles.lightboxPanel} onClick={e => e.stopPropagation()}>
+              <button type="button" className={styles.lightboxClose} onClick={() => setLightboxOpen(false)} aria-label="Cerrar imagen">
+                ×
+              </button>
+              <img className={styles.lightboxImage} src={previewImage} alt={project.name} />
+            </div>
+          </div>
+        )}
+
+        <div className={`${styles.cardInfo} ${hasPreview ? styles.cardInfoWithPreview : styles.cardInfoNoPreview}`}>
           <div className={styles.infoMain}>
             <p className={styles.projType}>{project.type[lang]}</p>
             <h2 className={styles.projName}>{project.name}</h2>

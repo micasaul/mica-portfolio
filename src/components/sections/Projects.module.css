@@ -29,7 +29,12 @@
 .card {
   background: var(--color-proj-card);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+}
+
+.cardNoPreview {
+  border-radius: var(--radius-lg);
 }
 
 .cardTop {
@@ -37,6 +42,9 @@
   padding: 1.5rem 1.75rem 0;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -52px;
 }
 
 .browser {
@@ -46,6 +54,14 @@
   border: 0.5px solid rgba(0,0,0,0.1);
   border-bottom: none;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.browser:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
 }
 
 .browserBar {
@@ -79,6 +95,29 @@
 }
 
 .browserBody img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.previewButton {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  transition: filter 0.22s ease;
+}
+
+.previewButton:hover {
+  filter: brightness(1.04);
+}
+
+.previewButton img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -139,6 +178,17 @@
   gap: 1.5rem;
   align-items: flex-start;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+  background: var(--color-proj-card);
+}
+
+.cardInfoWithPreview {
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.cardInfoNoPreview {
+  border-radius: var(--radius-lg);
 }
 
 .infoMain { flex: 1; }
@@ -432,6 +482,56 @@
   text-decoration: none;
   letter-spacing: 0.04em;
   transition: background 0.2s, color 0.2s;
+}
+
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 14, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.lightboxPanel {
+  position: relative;
+  max-width: min(1100px, 90vw);
+  max-height: 90vh;
+  background: rgba(16, 17, 18, 0.95);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.lightboxImage {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projLink:hover {
