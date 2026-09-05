@@ -30,7 +30,15 @@
   display: none;
 }
 
+.desktopRow {
+  display: flex;
+}
+
 @media (max-width: 768px) {
+  .desktopRow {
+    display: none;
+  }
+
   .rowMobile {
     display: flex;
   }

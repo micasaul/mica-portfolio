@@ -49,7 +49,7 @@ function App() {
           <Skills lang={lang} />
           <Education lang={lang} />
         </main>
-        <StarButton lang={lang} />
+        <StarButton theme={theme} toggleTheme={toggleTheme} />
       </motion.div>
     </>
   )
